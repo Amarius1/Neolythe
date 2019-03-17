@@ -1,6 +1,6 @@
 <head>
   <meta charset="UTF-8">
-  <title>Neolythe - Buttons</title><!--down of a brave new world-->
+  <title>Neolythe - Cards</title><!--down of a brave new world-->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="icon" href="icon.png">
 	<link href="neolythe.css" type="text/css" rel="stylesheet">
@@ -15,7 +15,7 @@
 
 <body class="slide-in">
 <!--LOOK ON MY WORKS YE MIGHTY AND DESPAIR-->
-<nav class="fixed">
+<nav class="depth-0">
   <a class="cbtn ripple" sidenav-toggle><i class="material-icons">menu</i></a>
   <a class="title uppercase">Components</a>
 
@@ -28,9 +28,9 @@
     Start including these components into your projects!
   </article>
   <Br>
-  <a href="buttons.html" class="list ripple active">Button</a>
+  <a href="buttons.html" class="list ripple">Button</a>
   <a href="typography.html" class="list ripple">Typography</a>
-  <a href="cards.html" class="list ripple">Card</a>
+  <a href="cards.html" class="list ripple active">Card</a>
   <a class="list ripple">Navbar</a>
   <a class="list ripple">Menu</a>
   <a class="list ripple">Form</a>
@@ -38,63 +38,57 @@
 </section>
 
 
-
-<br><br><br><br>
+<div style="z-index: 999 !important; box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 2px -1px rgba(0,0,0,0.12), 0 2px 3px 0 rgba(0,0,0,0.20);">
   <section class="container">
 
-  <H3>Buttons</H3>
+  <H3>Cards</H3>
 
   <article>
-  Buttons communicate an action a user can take. They are typically placed throughout your UI, in places like dialogs, forms, cards, and toolbars.
+    Cards are surfaces that display content and actions on a single topic.
+  <br><br>
+  They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
   </article>
+  <br><br>
 
-
-
-
-  </section>
-  <Br><Br>
-  <section>
-
-
-  <img class="mobile center-element" src="https://material.io/components/images/mdc_web_screenshots/buttons.png" width="90%">
-
-
-  </section>
-<Br>
-<section class="container">
   <H6>Resources</H6>
   <hr></hr>
   <br>
   <a href="reddit.com" class="list ripple"><i class="material-icons">code</i>Source Code</a>
-</section>
-<section class="container">
-  <H6>Demos</H6>
-  <hr></hr>
-  <br>
-  <p>Text Button</p>
-  <a class="btn ripple">Button</a>
-  <a class="btn accent ripple">Button</a>
-  <a class="btn accent ripple"><i class="material-icons">bluetooth_searching</i>Button</a>
-  <a class="btn accent large ripple">Button</a>
 
-  <p>Outlined Button</p>
-  <a class="btn outline ripple">Button</a>
-  <a class="btn outline accent ripple">Button</a>
-  <a class="btn outline accent ripple"><i class="material-icons">blur_on</i>Button</a>
-  <a class="btn outline accent large ripple">Button</a>
-  <p>Raised Button</p>
-  <a class="btn raised ripple">Button</a>
-  <a class="btn raised accent ripple">Button</a>
-  <a class="btn raised accent ripple"><i class="material-icons">favorite_border</i>Button</a>
-  <a class="btn raised accent large ripple">Button</a>
-  <p>Flat Button</p>
-  <a class="btn flat ripple">Button</a>
-  <a class="btn flat accent ripple">Button</a>
-  <a class="btn flat accent ripple"><i class="material-icons">filter_hdr</i>Button</a>
-  <a class="btn flat accent large ripple">Button</a>
+  </section>
+  <Br><Br>
+</div>
+<div style="margin-top: 2px; height: 500px; padding: 10px 10px; background-color: #eeeeee;">
 
-</section>
-<Br><Br><Br><Br><Br>
+<div type="example-size" class="card">
+  <article>This is a simple card with some content and buttons</article>
+  <div position="right" class="actions divider">
+    <a class="btn raised accent ripple">Button</a>
+    <a class="btn raised accent ripple">Button</a>
+  </div>
+</div>
+
+<div type="example-size" class="card">
+    <H6>Card</H6>
+  <article>Different styled action button. And title.</article>
+  <div position="left" class="actions">
+    <a class="btn accent ripple">Button</a>
+  </div>
+
+</div>
+
+<div type="example-size" class="card">
+  <article>Different styled action button.</article>
+  <div position="left" class="actions">
+    <a class="btn accent ripple">Button</a>
+  </div>
+</div>
+</div>
+
+
+
+
+
 
 
 
