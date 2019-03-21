@@ -43,6 +43,11 @@
   {
     display: block !important;
   }
+  [position="contents-inline"]
+  {
+     display: block !important;
+
+  }
 }
 @media not all and (pointer: coarse) {
   .btn:not(.raised):hover {
@@ -363,6 +368,13 @@ box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0
 		margin: 3px 3px;
 
 }
+.btn.material-icons
+{
+    border-radius: 40px;
+    padding: 8px 8px;
+    margin: 1px 1px;
+    color: rgba(70,70,70,1);
+}
 .cbtn
 {
     display: inline-flex;
@@ -548,6 +560,7 @@ nav > a
 .sidenav
 {
  transition: all 2s;
+
 }
 .sidenav a.list
 {
@@ -579,30 +592,29 @@ a.list.active .waves-ripple
   background-color: var(--accent-ripple);
 }
 
-
+[position="contents-inline"]
+{
+   display: inline-flex;
+}
 .card {
   box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
   transition: 0.3s;
   border-radius: var(--corner-radius);
-  min-width: 50px;
   background-color: white;
-  display: inline-flex;
   position: relative;
+  margin: 5px 5px;
+  width: 280px;
+  min-height: 350px;
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 0.3s;
 }
-.card *
-{
-  display: block !important;
-}
+
 .card > span, .card > p, .card > a, .card > article, .card > H1, .card > H2, .card > H3, .card > H4, .card > H5, .card > H6, .card > sub
 {
   padding: 5px 5px;
-    display: inline-flex;
 }
-.card[type="example-size"]
-{
-  width: 280px;
-  height: 280px;
-}
+
 .card > .actions
 {
   position: absolute;
@@ -624,7 +636,111 @@ a.list.active .waves-ripple
 {
   float: left;
 }
-.card > p
+.card > .actions[position="top"]
 {
-  display: block !important;
+  float: right;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+.actions[position="top"] > img
+{
+  width: 45px;
+  height: 45px;
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  float: left;
+  margin: 7px 7px;
+  margin-right: 8px;
+}
+.actions[position="top"] > p:first-of-type
+{
+  position: relative;
+  top: 7px !important;
+  font-size: 18px !important;
+  color: rgba(0,0,0,1);
+}
+.actions[position="top"] > p
+{
+  position: relative;
+  top: 7px;
+  font-size: 15px !important;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  margin-top: 9px;
+  color: rgba(70,70,70,1);
+  margin-bottom: 0px;
+}
+.thumb
+{
+  display: inline-flex;
+  float: right;
+}
+.thumb > img
+{
+  width: 80px;
+  height: 80px;
+  border-radius: 5px !important;
+  margin: 7px 7px;
+  margin-left: 5px;
+}
+
+.card p:first-of-type
+{
+  font-size: 20px;
+  letter-spacing: 0.15px;
+  font-weight: 450;
+  margin: 0px;
+  margin-bottom: -3px;
+}
+.card > img
+{
+  width: 100%;
+}
+.card img:first-child
+{
+  border-radius: 5px 5px 0px 0px;
+
+}
+.card > p.uppercase
+{
+  font-size: 16px;
+  margin-top: 4px;
+  color: rgba(  0,0,0,1);
+}
+
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle {
+  display: block;
+
+  border-radius: 7px;
+  transition: all 0.3s ease-out;
+}
+.lbl-toggle.material-icons{
+  border-radius: 40px;
+  padding: 7px 7px;
+  margin: 3px 3px;
+}
+.collapsible-content .content-inner {
+  background: rgba(250, 224, 66, .2);
+  padding: .5rem 1rem;
+}
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+    border-top: 1px solid rgba(100,100,100,0.4);
+  transition: max-height .4s ease-in-out;
+
+}
+.collapsible-content *
+{
+  padding: 5px 5px;
+}
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 350px;
 }
