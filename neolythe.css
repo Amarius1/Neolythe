@@ -1,3 +1,27 @@
+@font-face {
+  font-family: 'Material Icons Outlined';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialiconsoutlined/v4/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUce.woff2) format('woff2');
+}
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+
+.material-icons {
+  font-family: 'Material Icons Outlined' !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-size: 24px ;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga' !important;
+  -webkit-font-smoothing: antialiased !important;
+}
 :root {
   --accent: rgba(50, 0, 255,1);
   --accent-soft: rgba(50, 0, 255,0.21);
@@ -375,6 +399,11 @@ box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0
     margin: 1px 1px;
     color: rgba(70,70,70,1);
 }
+.material-icons.rate
+{
+    color: #ffd600 !important;
+}
+
 .cbtn
 {
     display: inline-flex;
@@ -478,7 +507,7 @@ box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0
     vertical-align: middle;
     margin-left: -6px;
     margin-right: 3px;
-    margin-top: -3.5%;
+    margin-top: -2%;
     margin-bottom: -3.5%;
 }
 .list
@@ -511,42 +540,12 @@ img
   margin: 0px 5%;
   padding-top: 20px;
 }
-nav
-{
-  background-color: rgba(253,253,253,1);
-  vertical-align: middle;
-  padding: 17px 15px;
-  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
-  z-index: 999;
-  width: 100%;
-  position: relative !important;
-  display: block;
-}
-nav i
-{
-  padding: 5px 5px;
-}
-nav > .cbtn
-{
-  margin-top: -10%;
-  margin-bottom: -10%;
-}
 .uppercase
 {
     text-transform: uppercase;
 }
-nav .title
-{
-  font-size: 24px;
-  vertical-align: middle;
-  -webkit-font-smoothing: antialiased;
-}
-nav > a
-{
-    display: inline-flex;
-    vertical-align: middle;
-    padding-top: -44px;
-}
+
+
 .sidenav .title
 {
   font-size: 26px !important;
@@ -607,14 +606,26 @@ a.list.active .waves-ripple
   min-height: 350px;
   display: inline-block;
   vertical-align: middle;
-  transition: all 0.3s;
+  transition: all 0.4s;
+}
+
+.card > article
+{
+  color: rgba(20,20,20,1);
 }
 
 .card > span, .card > p, .card > a, .card > article, .card > H1, .card > H2, .card > H3, .card > H4, .card > H5, .card > H6, .card > sub
 {
-  padding: 5px 5px;
+  padding: 7px 10px;
 }
-
+.card H6
+{
+  font-size: 16px !important;
+  letter-spacing: 0.15px;
+  font-weight: 450;
+  margin: 6px 0px;
+  color: rgba(50,50,50,1);
+}
 .card > .actions
 {
   position: absolute;
@@ -623,10 +634,35 @@ a.list.active .waves-ripple
   padding: 2px;
   border-radius: 0px 0px 5px 5px;
   width: 100%;
+  vertical-align: middle;
+}
+.card > .actions *
+{
+  vertical-align: middle;
+
+}
+.card > .actions.stack
+{
+  position: relative !important;
+  bottom: 1px;
+  right: 0px;
+  padding: 2px;
+  border-radius: 0px 0px 5px 5px;
+  width: 100%;
+  vertical-align: middle;
 }
 .card > .actions.divider
 {
   border-top: 1px solid rgba(100,100,100,0.4);
+}
+.card span.divider
+{
+  border-top: 1px solid rgba(100,100,100,0.4);
+  display: block;
+  width: 100%;
+  margin: 0px;
+  padding: 4px;
+  margin-top: 5px;
 }
 .card > .actions[position="right"] > *
 {
@@ -642,22 +678,56 @@ a.list.active .waves-ripple
   position: relative;
   top: 0px;
   left: 0px;
+  display: block;
 }
+.card > .actions[position="data"]
+{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  display: block;
+  margin: 0px 10px;
+}
+.card > .actions[position="data"] > .material-icons
+{
+  font-size: 16px;
+  margin: 0px;
+  padding: 1px;
+}
+.card > .actions[position="data"] > p
+{
+  font-size: 13px;
+  margin-top: 0px;
+  padding: 5px 5px;
+  font-weight: 400;
+  color: rgba(70,70,70,1);
+  display: inline-block;
+}
+.card > .actions[position="data"] > article
+{
+  font-size: 14px !important;
+  padding: 7px 10px;
+  color: rgba(70,70,70,1);
+  position: relative;
+  left: -10px;
+  font-weight: 400;
 
+}
 .actions[position="top"] > img
 {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   -webkit-clip-path: circle(50% at 50% 50%);
   clip-path: circle(50% at 50% 50%);
   float: left;
   margin: 7px 7px;
   margin-right: 8px;
 }
+
 .actions[position="top"] > p:first-of-type
 {
   position: relative;
-  top: 7px !important;
+  top: 8px !important;
   font-size: 18px !important;
   color: rgba(0,0,0,1);
 }
@@ -672,18 +742,30 @@ a.list.active .waves-ripple
   color: rgba(70,70,70,1);
   margin-bottom: 0px;
 }
-.thumb
+.card > img[position="thumb"]
 {
   display: inline-flex;
   float: right;
 }
-.thumb > img
+img[position="thumb"]
 {
-  width: 80px;
+  width: 80px !important;
   height: 80px;
   border-radius: 5px !important;
   margin: 7px 7px;
   margin-left: 5px;
+}
+.card > img[position="album"]
+{
+  display: inline-flex;
+  float: left;
+}
+img[position="album"]
+{
+  width: 110px !important;
+  height: 110px;
+  border-radius: 5px 0px 0px 0px !important;
+  margin-right: 10px;
 }
 
 .card p:first-of-type
@@ -709,38 +791,221 @@ a.list.active .waves-ripple
   margin-top: 4px;
   color: rgba(  0,0,0,1);
 }
+.card > H5
+{
+  margin: 5px 0px;
+  margin-bottom: -5px;
+}
 
 
-input[type='checkbox'] {
+
+/* Style the buttons that are used to open and close the accordion panel */
+.card > .accordion {
+  color: #444;
+  cursor: pointer;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+  width: 40px;
+  right: 3px;
+  bottom: 6px;
+  float: right;
+  margin: 0px;
+  margin-bottom: -5px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.card > a.active {
+   transform: rotate(180deg);
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.card .panel {
+
+  background-color: white;
+  width: 100%;
+  max-height: 0px;
+  border-radius: 0px 0px 5px 5px;
+  border-top: 1px solid rgba(100,100,100,0.4);
+
+ background-color: white;
+ max-height: 0;
+ overflow: hidden;
+ transition: max-height 0.2s ease-out;
+}
+.card .panel * {
+
+  padding: 5px 10px;
+  animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+
+
+
+
+
+
+
+.card > .actions[position="left"] > img
+{
+  float: left;
+  width: 26px;
+  margin: 4px 4px;
+}
+.card > .actions[position="left"] > p
+{
+  font-size: 13.5px;
+  vertical-align: middle;
+  margin-top: 0px;
+  margin-left: -2px;
+  color: rgba(70,70,70,1);
+  position: relative;
+  top: 9px;
+}
+.card > .actions[position="left"] > p:first-of-type:after
+{
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  vertical-align: middle;
+  background: rgba(70,70,70,1);
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  margin-left: 7px;
+  margin-top: -3px;
+  margin-right: 7px;
+}
+
+.card > .actions[position="left"] > p:only-child
+{
+  font-size: 17px;
+  vertical-align: middle;
+  margin: 5px 10px;
+  color: rgba(70,70,70,1);
+  position: relative;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+.card > .actions[position="left"] > p:only-child:after
+{
+  content: '';
   display: none;
 }
-
-.lbl-toggle {
-  display: block;
-
-  border-radius: 7px;
-  transition: all 0.3s ease-out;
-}
-.lbl-toggle.material-icons{
-  border-radius: 40px;
-  padding: 7px 7px;
-  margin: 3px 3px;
-}
-.collapsible-content .content-inner {
-  background: rgba(250, 224, 66, .2);
-  padding: .5rem 1rem;
-}
-.collapsible-content {
-  max-height: 0px;
-  overflow: hidden;
-    border-top: 1px solid rgba(100,100,100,0.4);
-  transition: max-height .4s ease-in-out;
-
-}
-.collapsible-content *
+.chip
 {
-  padding: 5px 5px;
+  display: inline-block;
+  color: #212121;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  border: none;
+  border-radius: 40px;
+  transition: .28s ease;
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  outline: none;
+  vertical-align: middle;
+  font-weight: 500;
+  margin: 1px 5px;
+  background-color: rgba(70,70,70,0.1);
 }
-.toggle:checked + .lbl-toggle + .collapsible-content {
-  max-height: 350px;
+.actions[position="tags"] > .chip
+{
+  display: inline-block;
+  color: #212121;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  border: none;
+  border-radius: 40px;
+  transition: .28s ease;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  vertical-align: middle;
+  font-weight: 500;
+  padding: 7px 10px;
+  margin: 1px 1px;
+  background-color: rgba(90,90,90,0.1);
+}
+.actions[position="tags"]
+{
+  width: 100%;
+  display: block;
+}
+.actions[position="tags"]
+{
+  padding: 5px 8px !important;
+}
+img ~ [position="caption"] {
+    background-color: rgba(255,255,255,0.9);
+}
+img[position="fill"]
+{
+  border-radius: var(--corner-radius) !important;
+}
+.card .actions[position="caption"] a
+{
+  float: right;
+}
+.card .actions[position="caption"] p
+{
+  float: left;
+  vertical-align: middle;
+  margin-top: 10px;
+  margin-left: 7px;
+  color: rgba(50,50,50,1) !important;
+}
+
+nav .actions[position="right"]
+{
+  float: right;
+  position: relative !important;
+  vertical-align: middle;
+  margin: 0px;
+  padding: 0px;
+  position: relative !important;
+  height: 42px;
+}
+
+nav
+{
+  background-color: rgba(253,253,253,1);
+  vertical-align: middle;
+  padding: 14px 12px;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+  z-index: 999;
+  width: 100%;
+  position: relative;
+  display: block;
+}
+nav > .actions
+{
+
+-webkit-font-smoothing: antialiased;
+display: inline-block;
+}
+nav > .cbtn
+{
+  margin-top: -10%;
+  margin-bottom: -10%;
+}
+nav > .material-icons
+{
+  margin-top: -10% !important;
+  margin-bottom: -10% !important;
+}
+nav p
+{
+  font-size: 24px;
+  margin: 0px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+    line-height: 1.49;
 }
