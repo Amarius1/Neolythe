@@ -344,3 +344,23 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+
+
+
+// drop down menu script
+	$( ".dropdown" ).on( "click", ".activator", function() {
+		$('.dropdown').removeClass('open');
+		$(this).parent().toggleClass('open');
+
+	});
+
+$(document).on("click", function(event){
+        var $trigger = $(".dropdown");
+        if($trigger !== event.target && !$trigger.has(event.target).length){
+            $(".dropdown").removeClass("open");
+
+        }
+    });
+
+// drop down menu script end

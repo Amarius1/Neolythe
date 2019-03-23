@@ -402,6 +402,8 @@ box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0
 .material-icons.rate
 {
     color: #ffd600 !important;
+    background-color: transparent;
+    font-family: 'Material Icons' !important;
 }
 
 .cbtn
@@ -973,6 +975,10 @@ nav .actions[position="right"]
   height: 42px;
 }
 
+nav .actions[position="right"] .btn
+{
+  margin: 0px;
+}
 nav
 {
   background-color: rgba(253,253,253,1);
@@ -989,6 +995,7 @@ nav > .actions
 
 -webkit-font-smoothing: antialiased;
 display: inline-block;
+  line-height: 1.4;
 }
 nav > .cbtn
 {
@@ -997,8 +1004,12 @@ nav > .cbtn
 }
 nav > .material-icons
 {
-  margin-top: -10% !important;
-  margin-bottom: -10% !important;
+  margin-top: -20% !important;
+  margin-bottom: -20% !important;
+}
+nav .actions a.large
+{
+  margin-top: -1px !important;
 }
 nav p
 {
@@ -1007,5 +1018,88 @@ nav p
   vertical-align: middle;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-    line-height: 1.49;
+    line-height: 1.4;
+}
+
+
+
+
+
+
+
+.dropdown {
+  position: relative;
+  transition: all 0.1s;
+}
+.dropdown.open .dd-menu {
+  opacity: 1;
+  background: white;
+  animation: scale-in-tr 0.15s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20);
+}
+.dropdown.open .dd-menu a {
+  display: block;
+  opacity: 1;
+  border-radius: 0px;
+}
+
+.dropdown .dd-menu {
+  opacity: 0;
+  position: absolute;
+  top: 33px;
+  right: 5px;
+  z-index: 1000;
+  border-radius: 5px;
+  animation: scale-out-tr 0.15s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  padding: 5px 0px;
+
+}
+.dropdown .dd-menu a {
+  display: block;
+  opacity: 0;
+  transition: all 0.1s;
+  text-transform: capitalize;
+  font-size: 15px;
+  padding: 10px 10px;
+  font-weight: 500;
+  color: rgba(50,50,50,1);
+  letter-spacing: 0.8px;
+
+}
+.dropdown .dd-menu a.divider {
+    border-top: 1px solid rgba(100,100,100,0.3);
+
+}
+
+@keyframes scale-in-tr {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+@keyframes scale-out-tr {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 0;
+  }
 }
