@@ -339,8 +339,10 @@ for (i = 0; i < acc.length; i++) {
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight){
       panel.style.maxHeight = null;
+      panel.style.opacity = "0";
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
+      panel.style.opacity = "1";
     }
   });
 }
@@ -364,3 +366,47 @@ $(document).on("click", function(event){
     });
 
 // drop down menu script end
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 20) {
+        $("nav.flat").addClass("depth-2");
+    } else {
+        $("nav.flat").removeClass("depth-2");
+    }
+});
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 1) {
+        $("nav.prominent").removeClass("expand");
+          $("nav.prominent").addClass("fixed");
+            $("span.buffer").removeClass("small");
+
+    } else {
+        $("nav.prominent").addClass("expand");
+        $("nav.prominent").removeClass("fixed");
+          $("span.buffer").addClass("small");
+
+    }
+});
+
+var nav = document.getElementById('nav'),
+    inner = document.getElementById('inner'),
+    height = inner.innerHeight,
+    scroll,
+    lastScroll = 0;
+
+function navCheck() {
+  scroll = inner.scrollTop;
+
+  if (scroll >= lastScroll) {
+    nav.className = 'fixed slide-up';
+  } else {
+    nav.className = 'fixed slide-down';
+  }
+
+  lastScroll = scroll;
+}
+
+inner.onscroll = navCheck;
