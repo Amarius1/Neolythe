@@ -378,15 +378,13 @@ $(window).scroll(function() {
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
 
-    if (scroll >= 1) {
-        $("nav.prominent").removeClass("expand");
-          $("nav.prominent").addClass("fixed");
-            $("span.buffer").removeClass("small");
+    if (scroll >= 7) {
+          $("nav.prominent").addClass("condensed");
+
 
     } else {
-        $("nav.prominent").addClass("expand");
-        $("nav.prominent").removeClass("fixed");
-          $("span.buffer").addClass("small");
+        $("nav.prominent").removeClass("condensed");
+
 
     }
 });

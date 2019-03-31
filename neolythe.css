@@ -72,6 +72,11 @@
      display: block !important;
 
   }
+  nav.prominent img
+  {
+
+    clip-path: inset(0 0 41.5% 0) !important;
+  }
 }
 @media not all and (pointer: coarse) {
   .btn:not(.raised):hover {
@@ -976,37 +981,65 @@ nav
   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
   z-index: 999;
   width: 100%;
-  position: relative;
+  position: relative !important;
   display: block;
   height: 60px;
   line-height: 60px;
   padding: 0px 10px;
-  transition: all 0.4s;
+  transition: all 0.3s ease;
 }
-nav.prominent.expand
+nav.prominent
 {
-  height: 170px;
-  transition: all 0.3s;
+    height: 160px;
 }
-nav.prominent.expand p
+nav.prominent p
 {
   position: relative;
-  transition: all 0.3s;
-  margin-top: 80px;
-  font-size: 32px;
+  transition: all 0.2s ease;
+  margin-top: 90px;
+  font-size: 38px;
+
 }
-span.buffer
+.white-text
 {
-  display: block;
-  background: white;
-  height: 180px;
+  color: white !important;
+}
+
+nav.prominent img
+{
+  position: absolute;
+  top: 0px;
+  left: 0px;
   width: 100%;
-  transition: all 0.5s ease;
+  clip-path: inset(0 0 82.3% 0);
+    transition: all 0.2s ease;
 }
-span.buffer.small
+nav.condensed
 {
-  height: 0px;
-  transition: all 0.5s ease;
+    height: 60px !important;
+}
+nav.condensed img
+{
+    clip-path: inset(0 0 93.41% 0);
+      transition: all 0.2s ease;
+      opacity: 0;
+}
+nav.condensed p
+{
+  margin-top: 0px;
+  font-size: 28px;
+  display: inline-block;
+  line-height: 60px;
+  vertical-align: middle;
+  margin: 0px;
+  transition: all 0.3s ease;
+  color: black !important;
+
+}
+nav.condensed .actions .btn
+{
+  color: black !important;
+
 }
 nav.fixed
 {
@@ -1119,13 +1152,15 @@ nav p
   background: white;
   animation: scale-in-tr 0.12s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
+
+
 }
 .dropdown.open .dd-menu a {
   display: block;
   opacity: 1;
   border-radius: 0px;
   margin: 0px;
-   animation: fade-in 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+   animation: fade-in 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .dropdown .dd-menu {
