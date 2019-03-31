@@ -388,6 +388,15 @@ $(window).scroll(function() {
 
     }
 });
+$('#modal-activator').click(function(e) {
+  $('.modal').addClass('active');
+  e.preventDefault();
+});
+$('.close').click(function(e) {
+  $('.modal').removeClass('active');
+  e.preventDefault();
+});
+
 
 var nav = document.getElementById('nav'),
     inner = document.getElementById('inner'),

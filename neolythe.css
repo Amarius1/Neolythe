@@ -75,7 +75,7 @@
   nav.prominent img
   {
 
-    clip-path: inset(0 0 41.5% 0) !important;
+    clip-path: inset(0 0 20.5% 0) !important;
   }
 }
 @media not all and (pointer: coarse) {
@@ -979,9 +979,11 @@ nav
   background-color: rgba(253,253,253,1);
   vertical-align: middle;
   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
-  z-index: 999;
+  z-index: 995;
   width: 100%;
   position: relative !important;
+  top: 0px;
+  left: 0px;
   display: block;
   height: 60px;
   line-height: 60px;
@@ -1007,7 +1009,7 @@ nav.prominent p
 
 nav.prominent img
 {
-  position: absolute;
+  position: relative !important;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -1061,6 +1063,7 @@ nav p
   vertical-align: middle;
   margin: 0px;
   transition: all 0.3s;
+  z-index: 0 !important;
 }
 nav *
 {
@@ -1083,66 +1086,108 @@ nav .actions
   top: 10px;
   display: inline-block;
 }
-/*
-nav .actions[position="right"]
+input.search
 {
-  float: right;
-  position: absolute !important;
-  vertical-align: middle;
-  margin: 0px;
-  right: 10px;
-  padding: 0px;
-  height: 42px;
+  padding: 12px 16px;
+  border-radius: 5px;
+  box-shadow: none !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-flex;
+  min-width: 300px;
+  background-color: rgba(1,1,1,0.05);
+  border: 0px;
+  transition: all 0.5s;
+}
+input.search:focus {
+    outline:none !important;
+    transition: all 0.5s;
+    padding: 15.5px 16px;
+    min-width: 800px;
+
+
 }
 
-nav .actions[position="right"] .btn
-{
-  margin: 0px;
+input::placeholder {
+  font-size: 16px;
+  letter-spacing: 0.15px;
+  font-weight: 400;
+  padding: 2px;
 }
-
-nav a[sidenav-toggle]
-{
-  position: relative;
+input,
+textarea,
+[contenteditable] {
+  caret-color: var(--accent);
+}
+.modal {
+  z-index: 101;
+  background-color: white;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0s 0.2s;
+  position: fixed;
+  top: 0px;
   left: 0px;
-
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  align-items:center;
 }
-nav > .actions
+
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+.modal.search .close
+{
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  font-size: 26px;
+}
+
+.modal.search input.search
+{
+  margin-top: 10px;
+  padding: 13px 16px;
+  border-radius: 5px;
+  box-shadow: none !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: none;
+  min-width: 50%;
+  background-color: rgba(1,1,1,0.05);
+  border: 0px;
+  transition: all 0.5s;
+  -webkit-animation: slide-in-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	 animation: slide-in-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.modal.search.active input.search
 {
 
--webkit-font-smoothing: antialiased;
-display: inline-block;
-  line-height: 1.4;
+  display: inline-flex;
+  transition: all 0.2s !important;
+
 }
-nav > .cbtn
-{
-  margin-top: -10%;
-  margin-bottom: -10%;
+.modal.search input.search:focus {
+    outline:none !important;
+    transition: all 0.5s;
+    padding: 14px 16px;
+    min-width: 70%;
+
 }
-nav > .material-icons
-{
-  margin-top: -20% !important;
-  margin-bottom: -20% !important;
-}
-nav .actions a.large
-{
-  margin-top: -1px !important;
-}
-nav p
-{
-  font-size: 24px;
-  margin: 0px;
-  vertical-align: middle;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-    line-height: 1.4;
-}
-*/
-
-
-
-
-
-
 .dropdown {
   position: relative;
   transition: all 0.1s;
