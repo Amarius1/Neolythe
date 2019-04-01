@@ -981,7 +981,7 @@ nav
   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
   z-index: 995;
   width: 100%;
-  position: relative !important;
+  position: relative;
   top: 0px;
   left: 0px;
   display: block;
@@ -1306,4 +1306,54 @@ textarea,
             transform: translateY(0);
     opacity: 1;
   }
+}
+.relative
+{
+	position: relative !important;
+}
+.bottom.tabs
+{
+  background-color: rgba(253,253,253,1);
+  vertical-align: middle;
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.20);
+  z-index: 995;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  padding: 0px 10px;
+  transition: all 0.3s ease;
+	text-align: center;
+	align-items:center;
+		
+}
+.bottom.tabs a i
+{
+font-size: 30px;
+font-family: 'Material Icons' !important;
+margin-top: 8px;
+display: block !important;
+margin: 0px;
+padding: 0px;
+		
+}
+.bottom.tabs a 
+{
+	height: 100%;
+	margin: 0px;
+	margin-top: -1px;
+	line-height: 50px;
+	padding: 5px 5px;
+	border-radius: 30px/100px;
+	background-color: grey;
+	text-transform: capitalize;
+	display: inline-block;
+	min-width: 50px;
+	line-height: 5px;
+		text-align: center;
+	align-items:center;
+	
 }
