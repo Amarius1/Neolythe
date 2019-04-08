@@ -417,3 +417,7 @@ function navCheck() {
 }
 
 inner.onscroll = navCheck;
+
+
+
+$('span:has(a[position="right")').css('border', '114px solid red');
