@@ -1,3 +1,9 @@
+
+
+
+
+
+
 ;(function(window) {
     'use strict';
 
@@ -397,6 +403,20 @@ $('.close').click(function(e) {
   e.preventDefault();
 });
 
+$("#scroll-left").click(function(){
+// To get actual position
+	var actualScroll = $(".tab-bar").scrollLeft();
+// To set new position
+  $(".tab-bar").scrollLeft(actualScroll+30)
+})
+
+$("#scroll-right").click(function(){
+// To get actual position
+	var actualScroll = $(".tab-bar").scrollLeft();
+// To set new position
+  $(".tab-bar").scrollLeft(actualScroll-30)
+})
+/* IN PROGRESS - CONFLIG
 
 var nav = document.getElementById('nav'),
     inner = document.getElementById('inner'),
@@ -417,7 +437,41 @@ function navCheck() {
 }
 
 inner.onscroll = navCheck;
+*/
+
+var tabBar = (function () {
+  var btn = document.querySelectorAll('.wave'),
+      tab = document.querySelector('.tab-bar'),
+      indicator = document.querySelector('.indicator'),
+      indi = 0;
+      indicator.style.marginLeft = indi + 'px';
+
+  for(var i = 0; i < btn.length; i++) {
+      btn[i].onmousedown = function (e) {
+
+      var width = $(".tab").width();
 
 
 
-$('span:has(a[position="right")').css('border', '114px solid red');
+
+      indicator.style.width = width;
+      indicator.style.marginLeft = indi + (this.dataset.num-1) * width + 'px';
+
+
+    };
+  }
+}());
+
+$(document).ready(function(){
+
+	$('ul.tab-bar li').click(function(){
+		var tab_id = $(this).attr('data-num');
+
+		$('ul.tab-bar li').removeClass('active');
+		$('.tab-content').removeClass('active');
+
+		$(this).addClass('active');
+		$("#"+tab_id).addClass('active');
+	})
+
+})
