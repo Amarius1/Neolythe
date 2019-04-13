@@ -85,6 +85,10 @@
   {
     display: none;
   }
+  .tab-bar {
+    overflow: scroll !important;
+
+  }
 }
 @media not all and (pointer: coarse) {
   .btn:not(.raised):hover {
@@ -988,7 +992,7 @@ img[position="fill"]
 
 nav
 {
-  background-color: rgba(253,253,253,1);
+  background-color: white;
   vertical-align: middle;
   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
   z-index: 995;
@@ -1069,7 +1073,7 @@ nav.fixed.flat
 }
 nav p
 {
-  font-size: 28px;
+  font-size: 26px;
   display: inline-block;
   line-height: 60px;
   vertical-align: middle;
@@ -1755,8 +1759,6 @@ span[position="bottom"] .actions[position="right"] .dropdown.open .dd-menu {
 }
 .tab-bar {
 
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: inline-block;
   list-style-type: none;
   -webkit-padding-start: 0;
@@ -1771,7 +1773,7 @@ span[position="bottom"] .actions[position="right"] .dropdown.open .dd-menu {
 }
 
 .tab {
-  width: 150px;
+  width: 130px;
   padding: 16px 0;
   background: white;
   color: rgba(1,1,1,1);
@@ -1799,7 +1801,7 @@ span[position="bottom"] .actions[position="right"] .dropdown.open .dd-menu {
 .indicator {
    text-align: center;
   align-items: center;
-  width: 150px;
+  width: 130px;
   height: 3px;
   background: var(--accent);
   position: absolute;

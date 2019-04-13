@@ -403,20 +403,40 @@ $('.close').click(function(e) {
   e.preventDefault();
 });
 
-$("#scroll-left").click(function(){
-// To get actual position
-	var actualScroll = $(".tab-bar").scrollLeft();
-// To set new position
-  $(".tab-bar").scrollLeft(actualScroll+30)
-})
 
-$("#scroll-right").click(function(){
-// To get actual position
-	var actualScroll = $(".tab-bar").scrollLeft();
-// To set new position
-  $(".tab-bar").scrollLeft(actualScroll-30)
-})
-/* IN PROGRESS - CONFLIG
+///////////////////////////////////////////////////
+var intervalId;
+$("#scroll-right").mousedown(function() {
+  intervalId = setInterval(tab_scroll_right, 10);
+}).mouseup(function() {
+  clearInterval(intervalId);
+}).mouseleave(function() {
+//this should help solve the problem that occurs when the mouse leaves the button while pressed down
+  clearInterval(intervalId);
+});
+
+function tab_scroll_right() {
+  var actualScroll = $(".tab-bar").scrollLeft();
+  $(".tab-bar").scrollLeft(actualScroll+4)
+}
+/////////////////////////////////////////////////
+var intervalId;
+$("#scroll-left").mousedown(function() {
+  intervalId = setInterval(tab_scroll_left, 10);
+}).mouseup(function() {
+  clearInterval(intervalId);
+}).mouseleave(function() {
+//this should help solve the problem that occurs when the mouse leaves the button while pressed down
+  clearInterval(intervalId);
+});
+
+function tab_scroll_left() {
+  var actualScroll = $(".tab-bar").scrollLeft();
+  $(".tab-bar").scrollLeft(actualScroll-4)
+}
+
+//////////////////////////////////////////////
+/* IN PROGRESS - CONFLICTING WITH TABS
 
 var nav = document.getElementById('nav'),
     inner = document.getElementById('inner'),
