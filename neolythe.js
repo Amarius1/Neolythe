@@ -4,7 +4,7 @@
 
 
 
-;(function(window) {
+(function(window) {
     'use strict';
 
     var Waves = Waves || {};
@@ -417,7 +417,7 @@ $("#scroll-right").mousedown(function() {
 
 function tab_scroll_right() {
   var actualScroll = $(".tab-bar").scrollLeft();
-  $(".tab-bar").scrollLeft(actualScroll+4)
+  $(".tab-bar").scrollLeft(actualScroll+5)
 }
 /////////////////////////////////////////////////
 var intervalId;
@@ -432,7 +432,7 @@ $("#scroll-left").mousedown(function() {
 
 function tab_scroll_left() {
   var actualScroll = $(".tab-bar").scrollLeft();
-  $(".tab-bar").scrollLeft(actualScroll-4)
+  $(".tab-bar").scrollLeft(actualScroll-5)
 }
 
 //////////////////////////////////////////////

@@ -30,6 +30,7 @@
   --card-bkg: white;
   --accent-link: rgba(50, 0, 255,1);
   --corner-radius: 5px;
+  --tab-width: 150px;
 }
 ::-moz-selection { background: #e8eaf6;}
 ::selection { background: #e8eaf6;}
@@ -88,6 +89,10 @@
   .tab-bar {
     overflow: scroll !important;
 
+  }
+  ::-webkit-scrollbar {
+      width: 12px;
+      display: none;
   }
 }
 @media not all and (pointer: coarse) {
@@ -1756,6 +1761,8 @@ span[position="bottom"] .actions[position="right"] .dropdown.open .dd-menu {
 .tabs
 {
   position: relative;
+  width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .tab-bar {
 
@@ -1766,14 +1773,14 @@ span[position="bottom"] .actions[position="right"] .dropdown.open .dd-menu {
   overflow: hidden;
   position: relative;
   white-space: nowrap;
-  margin: 0px !important;
+  margin: 0px;
   padding: 0px !important;
   font-size: 0px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
 }
 
 .tab {
-  width: 130px;
+  width: var(--tab-width);
   padding: 16px 0;
   background: white;
   color: rgba(1,1,1,1);
@@ -1801,7 +1808,7 @@ span[position="bottom"] .actions[position="right"] .dropdown.open .dd-menu {
 .indicator {
    text-align: center;
   align-items: center;
-  width: 130px;
+  width: var(--tab-width);
   height: 3px;
   background: var(--accent);
   position: absolute;
@@ -1809,11 +1816,19 @@ span[position="bottom"] .actions[position="right"] .dropdown.open .dd-menu {
   margin-left:0;
   z-index: 9999 !important;
   -webkit-transition: margin 0.3s ease;
-
   transition: margin 0.3s ease;
 }
 
-
+@media only screen and (max-width: 768px) {
+  .tab
+  {
+    width: 100px !important;
+  }
+  .indicator
+  {
+    width: 100px !important;
+  }
+}
 .tab-content{
     display: none;
     width: 100%;
