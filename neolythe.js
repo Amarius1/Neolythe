@@ -71,7 +71,7 @@
             var pos         = offset(el);
             var relativeY   = (e.pageY - pos.top);
             var relativeX   = (e.pageX - pos.left);
-            var scale       = 'scale('+((el.clientWidth / 100) * 10)+')';
+            var scale       = 'scale('+((el.clientWidth / 102) * 14)+')';
 
             // Support for touch devices
             if ('touches' in e) {
@@ -120,7 +120,7 @@
             TouchHandler.touchup(e);
 
             var el = this;
-            var width = el.clientWidth * 1.4;
+            var width = el.clientWidth * 1.5;
 
             // Get first ripple
             var ripple = null;
@@ -459,6 +459,28 @@ function navCheck() {
 inner.onscroll = navCheck;
 */
 
+
+$(document).ready(function(){
+	$("input.indeterminate").attr('state','1').each(function(){
+		$(this)[0].indeterminate = true;
+	});
+	$("input.indeterminate").click(function(){
+		var state = parseInt($(this).attr('state'));
+		if( state == 0 ) {
+			$(this)[0].indeterminate = true;
+			$(this)[0].checked = false;
+		} else if( state == 1 ) {
+			$(this)[0].indeterminate = false;
+			$(this)[0].checked = true;
+		} else if( state == 2 ) {
+			$(this)[0].indeterminate = false;
+			$(this)[0].checked = false;
+			state = -1;
+		}
+		$(this).attr('state', ++state);
+	});
+});
+
 var tabBar = (function () {
   var btn = document.querySelectorAll('.wave'),
       tab = document.querySelector('.tab-bar'),
@@ -482,10 +504,25 @@ var tabBar = (function () {
   }
 }());
 
+
+(function($){
+    var _dataFn = $.fn.data;
+    $.fn.data = function(key, val){
+        if (typeof val !== 'undefined'){
+            $.expr.attrHandle[key] = function(elem){
+                return $(elem).attr(key) || $(elem).data(key);
+            };
+        }
+        return _dataFn.apply(this, arguments);
+    };
+})(jQuery);
+
+
+
 $(document).ready(function(){
 
 	$('ul.tab-bar li').click(function(){
-		var tab_id = $(this).attr('data-num');
+		var tab_id = $(this).attr('data-target');
 
 		$('ul.tab-bar li').removeClass('active');
 		$('.tab-content').removeClass('active');
