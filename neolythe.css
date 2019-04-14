@@ -22,6 +22,22 @@
   -webkit-font-feature-settings: 'liga' !important;
   -webkit-font-smoothing: antialiased !important;
 }
+
+.material-icons.filled {
+  font-family: 'Material Icons' !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-size: 24px ;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga' !important;
+  -webkit-font-smoothing: antialiased !important;
+}
 :root {
   --accent: rgba(50, 0, 255,1);
   --accent-soft: rgba(50, 0, 255,0.21);
@@ -110,6 +126,10 @@
   a.btn.dark:hover
   {
     background-color: rgba(1,1,1,1) !important;
+  }
+  .hover:hover
+  {
+    box-shadow: 0 12px 17px 2px rgba(0,0,0,0.14), 0 5px 22px 4px rgba(0,0,0,0.12), 0 7px 8px -4px rgba(0,0,0,0.20);
   }
 
 }
@@ -230,6 +250,14 @@ body
 {
 	text-align: center;
 	align-items:center;
+}
+.center-both {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .container
 {
@@ -1762,7 +1790,7 @@ span[position="bottom"] .actions[position="right"] .dropdown.open .dd-menu {
 {
   position: relative;
   width: 100%;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
 }
 .tab-bar {
 
@@ -1776,6 +1804,8 @@ span[position="bottom"] .actions[position="right"] .dropdown.open .dd-menu {
   margin: 0px;
   padding: 0px !important;
   font-size: 0px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      background-color: white;
 
 }
 
