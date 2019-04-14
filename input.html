@@ -1,0 +1,72 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Neolythe - Topbars</title><!--down of a brave new world-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="icon" href="icon.png">
+	<link href="neolythe.css" type="text/css" rel="stylesheet">
+  <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" tyle="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://amarius1.github.io/NeoMaterial/css/sidebarjs.min.css">
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<style>
+
+
+</style>
+</head>
+<body style="background: url('bkg.jpg');">
+
+  <nav class="slide-in flat fixed">
+    <a href="index.html" class="btn ripple material-icons">arrow_back</a>
+    <p>Input</p>
+
+    <div position="right" class="actions">
+      <a target="_blank" href="https://material.io/develop/web/components/input-controls/checkboxes/" class="btn outline accent ripple">Guidelines</a>
+      <p></p>
+    </div>
+  </nav>
+<Br><Br><Br>
+<section class="container">
+<H3>Switches</H3>
+<p>Switches toggle the state of a single setting on or off. They are the preferred way to adjust settings on mobile.
+</p>
+<Br>
+<section class="container">
+
+  <span class="switch">
+    <input type="checkbox" id="switch1" checked>
+    <label for="switch1" class="thumb">Normal</label>
+  </span>
+  <br>
+  <span class="switch">
+    <input type="checkbox" id="switch2" checked>
+    <label for="switch2" class="thumb contained">Contained</label>
+  </span>
+
+</section>
+<H3>Checkboxes</H3>
+<p>Checkboxes allow the user to select one or more items from a set. Checkboxes can be used to turn an option on or off.
+</p>
+<Br>
+<section class="container">
+
+    <input type='checkbox' class='checkbox'>Normal
+
+  <br>
+
+    <input type='checkbox' class='checkbox indeterminate'>Indeterminate
+
+</section>
+<!--scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://amarius1.github.io/NeoMaterial/js/sidebarjs.min.js"></script>
+<script src="neolythe.js"></script>
+<script>
+ // Init SidebarJS
+ var sidenav = new sidenav.SidebarElement();
+ </script>
+</body>
+
+</html>
