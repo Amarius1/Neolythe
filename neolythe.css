@@ -38,7 +38,10 @@
   -webkit-font-feature-settings: 'liga' !important;
   -webkit-font-smoothing: antialiased !important;
 }
+
 :root {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+-webkit-tap-highlight-color: transparent;
   --accent: rgba(50, 0, 255,1);
   --accent-soft: rgba(50, 0, 255,0.21);
   --accent-ripple: rgba(50, 10, 240, 0.25);
@@ -2005,6 +2008,7 @@ input[type=checkbox].checkbox {
     font-size: 1.67em !important;
   font: inherit;
   margin: 4px;
+   outline: 0;
   vertical-align: middle;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2022,7 +2026,7 @@ input[type=checkbox].checkbox {
   transition: transform 0.3s cubic-bezier(0.2, 0.3, 0, 1), box-shadow 0.3s cubic-bezier(0.2, 0.3, 0, 1), border-color 0s linear 0.17s, -webkit-transform 0.3s cubic-bezier(0.2, 0.3, 0, 1);
 }
 input[type=checkbox]:focus {
-  outline: none;
+  outline: none !important;
 }
 input[type=checkbox]:active {
   -webkit-transform: scale(0.8);
