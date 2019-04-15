@@ -2010,6 +2010,7 @@ input[type=checkbox].checkbox {
   font: inherit;
   margin: 4px;
    outline: 0;
+     cursor: pointer;
   vertical-align: middle;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2150,4 +2151,260 @@ input[type=checkbox]:indeterminate:after
    text-align: center;
   background: var(--accent);
   -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.textfield:not(.outlined) {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-top: 12px;
+  min-width: 200px;
+  max-width: 100%;
+  color: #212121;
+  font-weight: 400;
+  background-color: rgba(220,220,220,1);
+  border-radius: 5px 5px 0px 0px;
+}
+
+.textfield:not(.outlined) input,
+.textfield:not(.outlined) label {
+  font-size: 17px;
+  text-align: left;
+  width: 100%;
+  padding: 5px 8px;
+}
+
+.textfield:not(.outlined) input {
+  display: block;
+  margin: 0;
+  outline: 0;
+  border: none;
+  border-bottom: 1.5px solid rgba(140,140,140,1);
+  background: transparent;
+  padding: 10px 8px !important;
+}
+.textfield:not(.outlined) input::selection
+{
+   background: white;
+}
+.textfield:not(.outlined) label {
+  display: block;
+  position: absolute;
+  top: 12px;
+  bottom: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+  color: rgba(70,70,70,1);
+}
+
+.textfield:not(.outlined) label:after {
+  visibility: hidden;
+  position: absolute;
+  left: 45%;
+  bottom: 0;
+  background-color: var(--accent);
+  width: 10px;
+  height: 2px;
+  content: '';
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.textfield:not(.outlined) label {
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.textfield:not(.outlined) input:focus + label,
+.textfield:not(.outlined) input:valid + label {
+  visibility: visible;
+  top: 0;
+  font-size: 13px;
+
+}
+.textfield:not(.outlined) input:focus + label {
+  color: var(--accent);
+}
+.textfield:not(.outlined) input:focus + label:after {
+  visibility: visible;
+  left: 0;
+  width: 100%;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px rgba(220,220,220,1) inset !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.textfield.outlined {
+
+    position: relative;
+    display: inline-block;
+    padding-top: 6px;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+/* Input, Textarea */
+.textfield.outlined > input,
+.textfield.outlined > textarea {
+    box-sizing: border-box;
+    margin: 0;
+    border: solid 1.5px; /* Safari */
+    border-color: rgba(140,140,140,1);
+    border-top-color: transparent;
+    border-radius: 5px;
+    padding: 14px 8px 14px;
+    width: 100%;
+    height: inherit;
+    color: rgba(10,10,10,1);
+    background-color: transparent;
+    box-shadow: none; /* Firefox */
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    transition: border 0.2s, box-shadow 0.2s;
+    font-weight: 400;
+    font-size: 17px;
+    padding-left: 12px;
+}
+
+/* Span */
+.textfield.outlined > input + span,
+.textfield.outlined > textarea + span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    max-height: 100%;
+    color: rgba(140,140,140,1);
+    font-size: 75%;
+    line-height: 15px;
+    cursor: text;
+    font-size: 13px;
+    transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+
+/* Corners */
+.textfield.outlined > input + span::before,
+.textfield.outlined > input + span::after,
+.textfield.outlined > textarea + span::before,
+.textfield.outlined > textarea + span::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    margin-top: 6px;
+    border-top: solid 1.5px;
+    min-width: 10px;
+    height: 8px;
+    pointer-events: none;
+    box-shadow: inset 0 1.5px transparent;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.textfield.outlined > input + span::before,
+.textfield.outlined > textarea + span::before {
+    margin-right: 4px;
+    border-left: solid 1.5px transparent;
+    border-radius: 5px 0;
+}
+
+.textfield.outlined > input + span::after,
+.textfield.outlined > textarea + span::after {
+    flex-grow: 1;
+    margin-left: 4px;
+    border-right: solid 1.5px transparent;
+    border-radius: 0 5px;
+}
+
+
+
+/* Placeholder-shown */
+.textfield.outlined > input:not(:focus):placeholder-shown,
+.textfield.outlined > textarea:not(:focus):placeholder-shown {
+    border-top-color: rgba(140,140,140,1);
+}
+
+.textfield.outlined > input:not(:focus):placeholder-shown + span,
+.textfield.outlined > textarea:not(:focus):placeholder-shown + span {
+    font-size: 17px;
+    line-height: 68px;
+    color: rgba(70,70,70,1) !important;
+    font-weight: 400;
+}
+
+.textfield.outlined > input:not(:focus):placeholder-shown + span::before,
+.textfield.outlined > textarea:not(:focus):placeholder-shown + span::before,
+.textfield.outlined > input:not(:focus):placeholder-shown + span::after,
+.textfield.outlined > textarea:not(:focus):placeholder-shown + span::after {
+    border-top-color: transparent;
+}
+
+/* Focus */
+.textfield.outlined > input:focus,
+.textfield.outlined > textarea:focus {
+    border-color: var(--accent);
+    border-top-color: transparent;
+    outline: none;
+}
+
+.textfield.outlined > input:focus + span,
+.textfield.outlined > textarea:focus + span {
+    color: var(--accent);
+}
+
+
+
+
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+        .textfield.outlined > input,
+        .textfield.outlined > input + span,
+        .textfield.outlined > textarea,
+        .textfield.outlined > textarea + span,
+        .textfield.outlined > input + span::before,
+        .textfield.outlined > input + span::after,
+        .textfield.outlined > textarea + span::before,
+        .textfield.outlined > textarea + span::after {
+            transition-duration: 0.1s;
+        }
+    }
 }
