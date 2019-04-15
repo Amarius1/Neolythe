@@ -52,6 +52,7 @@
   --tab-width: 150px;
   --switch: rgba(60, 0, 265,1);
   --switch-bar: rgba(50, 10, 240, 0.25);
+  --light: white;
 }
 ::-moz-selection { background: #e8eaf6;}
 ::selection { background: #e8eaf6;}
@@ -2005,7 +2006,7 @@ p
 input[type=checkbox].checkbox {
   width: 0.94em;
   height: 0.94em;
-    font-size: 1.67em !important;
+    font-size: 1.55em !important;
   font: inherit;
   margin: 4px;
    outline: 0;
@@ -2015,7 +2016,7 @@ input[type=checkbox].checkbox {
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
-  background: #fff;
+  background: var(--light);
   border-radius: 0.125em;
   box-sizing: border-box;
   border: 0.125em solid rgba(140,140,140,1);
@@ -2043,7 +2044,7 @@ input[type=checkbox]:indeterminate {
 input[type=checkbox]:before,
 input[type=checkbox]:after {
   content: '';
-  background: #fff;
+  background: var(--light);
   height: 0.9em;
   width: 1.1em;
   position: absolute;
@@ -2087,7 +2088,66 @@ input[type=checkbox]:indeterminate:after
 {
   top: -0.155em;
   left: -0.155em;
+}
 
 
 
+
+
+}
+.radio {
+  margin: 16px 0;
+}
+.radio.radio-inline {
+  display: inline-block;
+}
+.radio input[type="radio"] {
+  display: none;
+}
+.radio input[type="radio"]:checked + label:before {
+  border-color: var(--accent);
+  animation: ripple 0.2s linear forwards;
+}
+.radio input[type="radio"]:checked + label:after {
+  transform: scale(1);
+}
+.radio label {
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  padding: 4px 30px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  vertical-align: top;
+  line-height: 1.1rem;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+.radio label:before, .radio label:after {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  transition: all .23s ease;
+  transition-property: transform, border-color;
+}
+.radio label:before {
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(140,140,140,1);
+  background-color: var(--light);
+  -webkit-font-smoothing: antialiased;
+}
+.radio label:after {
+  top: 5px;
+  left: 5px;
+  width: 14px;
+  height: 14px;
+  	align-items:center;
+  transform: scale(0);
+   text-align: center;
+  background: var(--accent);
+  -webkit-font-smoothing: antialiased;
 }
